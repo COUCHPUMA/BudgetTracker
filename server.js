@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-require('dotenv').config();
+// require('dotenv').config();
 
 const PORT = process.env.PORT || 3000
 
@@ -25,5 +25,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 app.use(require("./routes/api.js"));
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("app is listening");
+    console.log(`app is listening on http://localhost:${PORT}`);
 });
